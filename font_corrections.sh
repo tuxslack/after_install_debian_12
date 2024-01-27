@@ -41,6 +41,11 @@ fi
 # Check for sudo privileges
 sudo -v || (inform "sudo may not be installed or the user may not have sudo permissions." && exit 1)
 
+###Install Ubuntu fonts
+
+sudo apt install ubuntu-fonts
+
+###tweak fonts
 
 if [ -d "$HOME/".config/gtk-4.0 ]
 then
