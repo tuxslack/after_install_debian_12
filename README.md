@@ -69,7 +69,7 @@ Unnecessary Apps Remover:
     hdate*
     uim*
     thunderbird*
-    gnome-music
+    gnome-music`
 ```
 curl -o unnecessary_apps_remover.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/unnecessary_apps_remover.sh && chmod +x unnecessary_apps_remover.sh && ./unnecessary_apps_remover.sh && rm unnecessary_apps_remover.sh
 ```
