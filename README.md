@@ -75,7 +75,7 @@ curl -o unnecessary_apps_remover.sh https://raw.githubusercontent.com/phaleixo/a
 ```
 Switch Radeon to Amdgpu on Debian-based distros:
 
-Ativar o drive amdgpu e desativar o drive Radeon no linux, testada no Debian 12, mas deve funcionar em qualquer distro baseada em Debian. Abaixo está uma lista de todos os modelos de GPUs das famílias ‘Sea Islands’ e ‘Southern Islands’. Caso a sua GPU esteja nessa lista, então o procedimento provavelmente será necessário.
+Enable amdgpu drive and disable Radeon drive on Linux, tested on Debian 12, but should work on any Debian based distro. Below is a list of all GPU models from the ‘Sea Islands’ and ‘Southern Islands’ families. If your GPU is on this list, then the procedure will probably be necessary.
 
 Tahiti, Bonaire, Hawaii, Pitcairn, Cape Verde, Oland.
 ```
