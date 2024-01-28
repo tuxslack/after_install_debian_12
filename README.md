@@ -81,4 +81,8 @@ Tahiti, Bonaire, Hawaii, Pitcairn, Cape Verde, Oland.
 ```
 curl -o radeon_to_amdgpu.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/radeon_to_amdgpu.sh && chmod +x radeon_to_amdgpu.sh && ./radeon_to_amdgpu.sh && rm radeon_to_amdgpu.sh
 ```
+install and set fira fonts:
+```
+curl -o fira_fonts.sh https://raw.githubusercontent.com/phaleixo/after_install_debian_12/main/fira_fonts.sh && chmod +x fira_fonts.sh && ./fira_fonts.sh && rm fira_fonts.sh
+```
 
