@@ -58,7 +58,7 @@ if [[ $? -ne 0 ]]; then
 fi
 
 
-wget -O fonts.zip "https://github.com/mozilla/Fira.git"
+wget -O fonts.zip "https://github.com/mozilla/Fira/archive/refs/tags/4.202.zip"
 
 wget -O firacode.zip "https://github.com/tonsky/FiraCode/releases/download/1.204/FiraCode_1.204.zip"
 
@@ -81,7 +81,7 @@ echo "Setting default fonts "
 
 gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans Regular 11'
 gsettings set org.gnome.desktop.interface font-name 'Fira Sans Regular 11'
-gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono Regular 11'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Code Regular 11'
 gsettings set org.gnome.nautilus.desktop font 'Fira Sans Regular 11'
 clear
 
