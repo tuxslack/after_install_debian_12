@@ -37,9 +37,6 @@ else
 	exit 1
 fi
 
-### Check for sudo privileges
-sudo -v || (inform "sudo may not be installed or the user may not have sudo permissions." && exit 1)
-
 clear
 mkdir -p ~/.fonts
 
@@ -79,10 +76,10 @@ sleep 2
 clear
 echo "Setting default fonts "
 
-gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans Regular 11'
-gsettings set org.gnome.desktop.interface font-name 'Fira Sans Regular 11'
+gsettings set org.gnome.desktop.interface document-font-name 'FiraSans-Regular 11'
+gsettings set org.gnome.desktop.interface font-name 'FiraSans-Regular 11'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Code Regular 11'
-gsettings set org.gnome.nautilus.desktop font 'Fira Sans Regular 11'
+gsettings set org.gnome.nautilus.desktop font 'FiraSans-Regular 11'
 clear
 
 rm -rf fonts.zip
