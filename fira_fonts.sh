@@ -79,10 +79,10 @@ sleep 2
 clear
 echo "Setting default fonts "
 
-gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans Regular 12'
+gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans Regular 11'
 gsettings set org.gnome.desktop.interface font-name 'Fira Sans Regular 11'
-gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono Regular 13'
-gsettings set org.gnome.nautilus.desktop font 'Fira Sans Regular 12'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono Regular 11'
+gsettings set org.gnome.nautilus.desktop font 'Fira Sans Regular 11'
 clear
 
 rm -rf fonts.zip
