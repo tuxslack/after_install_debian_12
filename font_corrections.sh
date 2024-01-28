@@ -94,16 +94,3 @@ EOF
 
 xrdb -merge ~/.Xresources
 sudo fc-cache -fv 
-###Change fonts to ubuntu fonts:
-
-### To  ‘Interface Text’ value for system menu, app button text, etc:
-gsettings set org.gnome.desktop.interface font-name "ubuntu regular 12"
-
-###To ‘Monospace Text’ for text in document file, terminal, etc:
-gsettings set org.gnome.desktop.interface monospace-font-name "monospace regular 11"
-
-###For the value of ‘Document Text’ option:
-gsettings set org.gnome.desktop.interface document-font-name "ubuntu bold 12"
-
-###For the ‘Legacy Window Titles’ font 
-gsettings set org.gnome.desktop.wm.preferences titlebar-font "ubuntu bold 12"
