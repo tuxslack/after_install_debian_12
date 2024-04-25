@@ -85,6 +85,9 @@ apps=(
 	ntp
 	network-manager-config-connectivity-debian
 	ttf-mscorefonts-installer
+	zsh
+	fontconfig
+	git
 )
 
 for app_name in "${apps[@]}"; do
@@ -171,6 +174,7 @@ fi
 wget -O fonts.zip "https://github.com/mozilla/Fira/archive/refs/tags/4.202.zip"
 
 wget -O firacode.zip "https://github.com/tonsky/FiraCode/releases/download/1.204/FiraCode_1.204.zip"
+wget -O meslo.zip "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip"
 
 if [[ $? -ne 0 ]]; then
         echo "Downloading failed , exiting"
@@ -179,6 +183,7 @@ fi
 
 unzip fonts.zip -d ~/.fonts
 unzip firacode.zip -d ~/.fonts
+unzip meslo.zip -d ~/.fonts
 
 clear
 echo "purging fonts cache "
@@ -191,13 +196,14 @@ echo "Setting default fonts "
 
 gsettings set org.gnome.desktop.interface document-font-name 'Fira Sans Regular 11'
 gsettings set org.gnome.desktop.interface font-name 'Fira Sans Regular 11'
-gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Code Regular 11'
+gsettings set org.gnome.desktop.interface monospace-font-name 'MesloLGS Nerd Font Mono Regular 11'
 gsettings set org.gnome.nautilus.desktop font 'Fira Sans Regular 11'
 gsettings set org.gnome.desktop.wm.preferences titlebar-font "Fira Sans SemiBold 12"
 clear
 
 rm -rf fonts.zip
 rm -rf firacode.zip
+rm -rf meslo.zip
 
 ###Radeon to Amdgpu
 
@@ -225,7 +231,24 @@ else
     inform "Video card: '$video_card_info'" "error"
     inform "Unable to detect the AMDGPU or Radeon video driver on the system." "error"
 fi
+### Install Zsh
 
+### Remove folder zsh-autosuggestions and powerlevel10k:
+rm -rf ~/.zsh/zsh-autosuggestions
+rm -rf ~/powerlevel10k
+
+### install Zsh theme:
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+
+###Install plugin zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+echo 'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >>~/.zshrc
+
+## To make zsh the default shell:
+echo "Change_bash_to_zsh:"
+chsh -s $(which zsh)
+echo "Start a new terminal session."
 
 echo "Configuration completed. Press any key and close the terminal."
 read -n 1 -s any_key
