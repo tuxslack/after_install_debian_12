@@ -55,13 +55,13 @@ for app_name in "${apps[@]}"; do
     echo "[installed] - $app_name"
   fi
 done
-### Remove folder zsh-autosuggestions and powerlevel10k:
+### Remove old folder zsh-autosuggestions and powerlevel10k:
 rm -rf ~/.zsh/zsh-autosuggestions
-rm -rf ~/powerlevel10k
+rm -rf ~/.zsh/powerlevel10k
 
 ### install Zsh theme:
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zsh/powerlevel10k
+echo 'source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 
 ### Install Meslo fonts
 wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip \
