@@ -88,6 +88,10 @@ apps=(
 	zsh
 	fontconfig
 	git
+        gimp
+	gimp-plugin-registry
+ 	inkscape
+ 	distrobox
 )
 
 for app_name in "${apps[@]}"; do
@@ -142,6 +146,8 @@ apps_remove=(
     uim*
     thunderbird*
     gnome-music
+    evolution
+    libreoffice*
     
 )
 
@@ -208,7 +214,7 @@ rm -rf meslo.zip
 ###Radeon to Amdgpu
 
 # Check video driver
-video_driver_info=$(lspci -k | grep amdgpu)
+video_driver_info=$(lspci -k | grep radeon)
 video_card_info=$(lspci | grep VGA)
 
 if [[ "$video_driver_info" == *"Kernel driver in use: amdgpu"* ]]; then
@@ -247,7 +253,7 @@ echo 'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >>~/.zshrc
 
 ## To make zsh the default shell:
 echo "Change_bash_to_zsh:"
-chsh -s $(which zsh)
+sudo chsh -s /usr/bin/zsh
 echo "Start a new terminal session."
 
 echo "Configuration completed. Press any key and close the terminal."
